@@ -59,7 +59,7 @@ public_users.get('/title/:title',async function (req, res) {
   res.send(booksByTitle);
 });
 
-//  Get book review
+//  Get book review based on isbn
 public_users.get('/review/:isbn',function (req, res) {
   const isbn = req.params.isbn;
   const book = books[isbn];
@@ -69,6 +69,9 @@ public_users.get('/review/:isbn',function (req, res) {
     else{
         res.send("Not found")
     }
+});
+
+module.exports.general = public_users;
 });
 
 module.exports.general = public_users;
